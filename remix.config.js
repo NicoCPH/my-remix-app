@@ -1,17 +1,15 @@
 /** @type {import('@remix-run/dev').AppConfig} */
-exports.routes = async (defineRoutes) => {
-  // If you need to do async work, do it before calling `defineRoutes`, we use
-  // the call stack of `route` inside to set nesting.
-
-  return defineRoutes((route) => {
-    route("/", "routes/_index.tsx", { index: true });
-    route("about", "routes/about.tsx");
-  });
-};
+import path from "node:path";
 
 export default {
   ignoredRouteFiles: ["**/.*"],
-    
+  routes(defineRoutes) {
+    return defineRoutes((route) => {
+    route("/", path.join("routes", "_index.tsx"), { index: true });
+    route("/about", path.join("routes", "about.tsx"));
+    });
+    },
+    // serverModuleFormat: "cjs",
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // publicPath: "/build/",
