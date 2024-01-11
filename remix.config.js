@@ -1,5 +1,5 @@
-/** @type {import('@remix-run/dev').AppConfig} */
 import path from "node:path";
+/** @type {import('@remix-run/dev').AppConfig} */
 
 export default {
   ignoredRouteFiles: ["**/.*"],
