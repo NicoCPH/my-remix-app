@@ -5,7 +5,7 @@ export default {
   ignoredRouteFiles: ["**/.*"],
   routes(defineRoutes) {
     return defineRoutes((route) => {
-    route("/about", path.join("extra-routes", "test.tsx"));
+    route("/about", path.join("extra-routes/test", "test.tsx"));
     });
     },
     // serverModuleFormat: "cjs",
