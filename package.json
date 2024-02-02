@@ -4,9 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev --manual",
-    "start": "remix-serve ./build/index.js",
+    "build": "remix vite:build",
+    "dev": "remix vite:dev",
+    "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "@remix-run/node": "^2.4.1",
     "@remix-run/react": "^2.4.1",
     "@remix-run/serve": "^2.4.1",
+    "leaflet": "^1.9.4",
     "@vercel/analytics": "^1.1.1",
     "@vercel/remix": "^2.4.1",
     "isbot": "^4.3.0",
@@ -26,7 +27,9 @@
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "eslint": "^8.56.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vite-tsconfig-paths": "^4.3.1"
   },
   "engines": {
     "node": ">=18.0.0"

@@ -1,4 +1,3 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import {
   Links,
   LiveReload,
@@ -8,11 +7,9 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
-import type { LinksFunction } from "@vercel/remix";
+import "../app/app.css"
 
-export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
-];
+
 
 export default function App() {
   return (
@@ -23,11 +20,11 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+      <body className="red">
         <Outlet />
         <ScrollRestoration />
-        <Scripts />
         <LiveReload />
+        <Scripts />
         <Analytics />
       </body>
     </html>
