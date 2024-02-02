@@ -1,8 +1,12 @@
-import type { MetaFunction } from "@vercel/remix";
 
-export const config = { runtime: "edge" };
+import { LoaderFunction, json } from "@vercel/remix";
+import test from "~/test.server";
 
-export const meta: MetaFunction = () => [{ title: "Remix@Edge | New Remix App" }];
+export const loader: LoaderFunction = async ({ request }) => {
+
+  return json(test());
+};
+
 
 export default function Edge() {
   return (
